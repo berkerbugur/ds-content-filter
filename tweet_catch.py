@@ -10,6 +10,10 @@ from tweepy import Cursor
 from tweepy import OAuthHandler
 import pandas as pd
 import numpy as np
+import warnings
+
+warnings.filterwarnings('ignore')
+
 
 import twitter_credentials as TC
 
@@ -18,7 +22,7 @@ class AuthenticateApp():
     
     def authenticate_app(self):
         auth = OAuthHandler(TC.CONSUMER_KEY, TC.CONSUMER_KEY_SECRET)
-        auth.set_access_token(TC.ACCES_TOKEN, TC.ACCES_TOKEN_SECRET)
+        auth.set_access_token(TC.ACCES_TOKEN, TC.ACCES_TOKEN_SECRET)    
         return auth
 
 ### TWITTER CLIENT HANDLER ###
@@ -55,6 +59,11 @@ class TwitterClient():
         for tweet in Cursor(self.twitter_client.home_timeline, id=self.user_name).items(num_of_tweets):
             live_tweets.append(tweet)
         return live_tweets
+    
+    def on_error(self, status):
+        if status == 420:
+            return False
+        print(status)
 
 class TweetAnalyze():
     
@@ -75,8 +84,15 @@ if __name__ == '__main__':
     
     twitter_client = TwitterClient()
     tweet_analyze = TweetAnalyze()
-    tweets = twitter_client.get_live_feed(1)
+    
+    ###HOLY MOTHER OF DATA LIMIT
+    tweets = twitter_client.get_live_feed(20)
+    for i in tweets:
+        print(i.text + '\n')
+        
+    '''
     tweetList = []
     tweetList.append(tweets[0].text)
     print(tweetList)
     print(tweets[0].user.screen_name)
+    '''
