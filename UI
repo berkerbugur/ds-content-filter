@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Page Title</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Proje Adı</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <br><br>
+    <form class="form-inline" style="margin-bottom:20px">
+      <div class="form-group mb-2">
+        <label for="username" class="sr-only">Kullanıcı Adı</label>
+        <input type="text" readonly class="form-control" id="username" value="Kullanıcı Adı"
+          style="border: 1px solid gray; border-radius: 30px">
+      </div>
+      <div class="form-group mx-sm-5 mb-2">
+        <label for="date" class="sr-only">Tarih Bilgileri</label>
+        <input type="date" readonly class="form-control" id="date" placeholder="Tarih Bilgileri">
+      </div>
+    </form>
+
+    <div class="jumbotron">
+      <h1 class="display-4">Kezban Büşra Öcal</h1>
+      <p class="lead">Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek</p>
+    </div>
+
+    <form class="form-inline">
+      <div class="form-group mb-2">
+        <label for="sentiment" class="sr-only">Sentiment</label>
+        <input type="text" readonly class="form-control" id="sentiment" value="Sentiment"
+          style="border: 1px solid gray; border-radius: 30px">
+      </div>
+      <div class="form-group mx-sm-5 mb-2">
+        <label for="spam" class="sr-only">Spam</label>
+        <input type="text" readonly class="form-control" id="spam" placeholder="Spam"
+          style="border: 1px solid gray; border-radius: 30px">
+      </div>
+    </form>
+    <br><br>
+    <div class="jumbotron">
+      <h1 class="display-4">Jumbotron2</h1>
+      <p class="lead">Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek</p>
+    </div>
+    <div class="jumbotron">
+      <h1 class="display-4">Jumbotron3</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
