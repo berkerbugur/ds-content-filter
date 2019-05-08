@@ -105,11 +105,12 @@ if __name__ == '__main__':
     
     for tweet in tweets:
         tt = tweet.text
+        ###Object construction is da wei brudda
+        ###Start of the creation of AnalysisAPI
         tweetDict = {}
         sentiment = tweet_analyze.sentiment_analyzer(tt)
         tweetDict['tweetText'] = tt
         tweetDict['sentiment'] = sentiment
-        ###Object construction is da wei brudda
         allData.append(tweetDict)
         print(allData)
         
