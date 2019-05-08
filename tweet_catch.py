@@ -10,6 +10,8 @@ from tweepy import Cursor
 from tweepy import OAuthHandler
 import pandas as pd
 import numpy as np
+from textblob import TextBlob as tb
+import re
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -77,6 +79,18 @@ class TweetAnalyze():
         df['retweets'] = np.array([tweet.retweet_count for tweet in tweets])
 
         return df
+    
+    def clean_tweet(self, tweet):
+        return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
+    
+    def sentiment_analyzer(self, tweet):
+        analysis = tb(self.clean_tweet(tweet))
+        if analysis.sentiment.polarity > 0:
+            return 1
+        elif analysis.sentiment.polarity == 0:
+            return 0
+        else:
+            return -1
 
 ### DRIVER METHOD TO EXECUTE ON ACTIVE PATH ###
 ### ANLIK DOSYA İÇİNDE ÇALIŞAN MAIN METODU ###
@@ -87,8 +101,16 @@ if __name__ == '__main__':
     
     ###HOLY MOTHER OF DATA LIMIT
     tweets = twitter_client.get_live_feed(20)
-    for i in tweets:
-        print(i.text + '\n')
+    for tweet in tweets:
+        tt = tweet.text
+        print(tt + '\n' + '###SENTIMENT ANALYSIS RESULT IS ')
+        sentiment = tweet_analyze.sentiment_analyzer(tt)
+        if sentiment == 1 :
+            print('POSITIVE###\n')
+        elif sentiment == 0 :
+            print('NEUTRAL###\n')
+        else:
+            print('NEGATIVE###\n')
         
     '''
     tweetList = []
