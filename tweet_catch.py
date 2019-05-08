@@ -101,16 +101,17 @@ if __name__ == '__main__':
     
     ###HOLY MOTHER OF DATA LIMIT
     tweets = twitter_client.get_live_feed(20)
+    allData = []
+    
     for tweet in tweets:
         tt = tweet.text
-        print(tt + '\n' + '###SENTIMENT ANALYSIS RESULT IS ')
+        tweetDict = {}
         sentiment = tweet_analyze.sentiment_analyzer(tt)
-        if sentiment == 1 :
-            print('POSITIVE###\n')
-        elif sentiment == 0 :
-            print('NEUTRAL###\n')
-        else:
-            print('NEGATIVE###\n')
+        tweetDict['tweetText'] = tt
+        tweetDict['sentiment'] = sentiment
+        ###Object construction is da wei brudda
+        allData.append(tweetDict)
+        print(allData)
         
     '''
     tweetList = []
