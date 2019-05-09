@@ -2,3 +2,7 @@
 __pycache__/twitter_credentials\.cpython-36\.pyc
 
 twitter_credentials\.py
+
+sentiment_credential\.py
+
+spam_credential\.py
