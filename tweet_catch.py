@@ -5,6 +5,7 @@ Created on Thu Mar 28 13:38:19 2019
 @author: bugur
 """
 
+import sentiment_credentials as sentCred
 from tweepy import API
 from tweepy import Cursor
 from tweepy import OAuthHandler
@@ -17,14 +18,13 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-import twitter_credentials as TC
 
 ### AUTHENTICATION HANDLER ###
 class AuthenticateApp():
     
     def authenticate_app(self):
-        auth = OAuthHandler(TC.CONSUMER_KEY, TC.CONSUMER_KEY_SECRET)
-        auth.set_access_token(TC.ACCES_TOKEN, TC.ACCES_TOKEN_SECRET)    
+        auth = OAuthHandler(sentCred.CONSUMER_KEY, sentCred.CONSUMER_KEY_SECRET)
+        auth.set_access_token(sentCred.ACCES_TOKEN, sentCred.ACCES_TOKEN_SECRET)    
         return auth
 
 ### TWITTER CLIENT HANDLER ###
@@ -55,12 +55,14 @@ class TwitterClient():
         return tweet_list
     
     def get_live_feed(self, num_of_tweets):
-        
-        live_tweets = []
-        
-        for tweet in Cursor(self.twitter_client.home_timeline, id=self.user_name).items(num_of_tweets):
-            live_tweets.append(tweet)
-        return live_tweets
+        try:
+            live_tweets = []
+            for tweet in Cursor(self.twitter_client.home_timeline, id=self.user_name).items(num_of_tweets):
+                live_tweets.append(tweet)
+            return live_tweets
+        except BaseException as e:
+            print("Error on_data %s" % str(e))
+        return True
     
     def on_error(self, status):
         if status == 420:
@@ -95,25 +97,12 @@ class TweetAnalyze():
 ### DRIVER METHOD TO EXECUTE ON ACTIVE PATH ###
 ### ANLIK DOSYA İÇİNDE ÇALIŞAN MAIN METODU ###
 if __name__ == '__main__':
-    
-    twitter_client = TwitterClient()
-    tweet_analyze = TweetAnalyze()
-    
-    ###HOLY MOTHER OF DATA LIMIT
-    tweets = twitter_client.get_live_feed(20)
-    allData = []
-    
-    for tweet in tweets:
-        tt = tweet.text
-        ###Object construction is da wei brudda
-        ###Start of the creation of AnalysisAPI
-        tweetDict = {}
-        sentiment = tweet_analyze.sentiment_analyzer(tt)
-        tweetDict['tweetText'] = tt
-        tweetDict['sentiment'] = sentiment
-        allData.append(tweetDict)
-        print(allData)
         
+    client = TwitterClient()
+    
+    tweet = client.get_live_feed(1)
+    print(tweet)
+    
     '''
     tweetList = []
     tweetList.append(tweets[0].text)
