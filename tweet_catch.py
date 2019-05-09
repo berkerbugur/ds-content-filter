@@ -5,7 +5,7 @@ Created on Thu Mar 28 13:38:19 2019
 @author: bugur
 """
 
-import sentiment_credentials as sentCred
+import sentiment_credential as sentCred
 from tweepy import API
 from tweepy import Cursor
 from tweepy import OAuthHandler

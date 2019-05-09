@@ -7,10 +7,13 @@ Created on Thu May  9 10:32:05 2019
 """
 
 import tweet_catch as tC
-from flask import Flask, request
+from flask import Flask
 from flask_restful import Resource, Api
+from flask_cors import CORS
+
 
 app = Flask('sentimentApp')
+CORS(app)
 api = Api(app)
 
 class Tweets(Resource):

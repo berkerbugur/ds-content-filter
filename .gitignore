@@ -6,3 +6,7 @@ twitter_credentials\.py
 sentiment_credential\.py
 
 spam_credential\.py
+
+__pycache__/tweet_catch\.cpython-36\.pyc
+
+__pycache__/sentiment_credential\.cpython-36\.pyc
