@@ -1,0 +1,16 @@
+.signForm {
+  max-width: 30%;
+  margin: auto;
+}
+
+button.centerize {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.text-d {
+  border-bottom: 1px solid gray;
+  padding-right: 5px;
+  border-bottom-right-radius: 5px;
+}

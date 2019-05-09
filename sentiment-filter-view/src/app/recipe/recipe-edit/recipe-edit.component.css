@@ -1,0 +1,8 @@
+.button-overall-margin {
+  margin: 2px;
+}
+
+input.ng-invalid.ng-touched,
+text-area.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
