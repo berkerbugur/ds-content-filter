@@ -4,14 +4,14 @@
   routerLinkActive="active"
   style="margin: 5px; cursor: pointer;">
   <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ rcp.name }}</h4>
-    <p class="list-group-item-text">{{ rcp.description }}</p>
+    <h4 class="list-group-item-heading">{{ tweet.userName }}</h4>
+    <p class="list-group-item-text">{{ tweet.tweetText }}</p>
 
   </div>
   <span class="pull-right">
         <img
-          [src]="rcp.imagePath"
-          alt="{{ rcp.name }}"
+          [src]="tweet.profilePic"
+          alt="{{ tweet.screenName }}"
           class="img-responsive"
           style="max-height: 50px;">
       </span>
