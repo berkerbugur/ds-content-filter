@@ -12,6 +12,12 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <style>
+    body{
+      background: purple;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -49,20 +55,35 @@
   <div class="container">
     <br><br>
     <form class="form-inline" style="margin-bottom:20px">
+        <div class="card">
+            <div class="card-body">
+                asdkadsa
+            </div>
+          </div>
+          <div class="card" style="margin-left:30px;">
+              <div class="card-body">
+                  asdkadsa
+              </div>
+            </div>
+      </form>
+
+    <form class="form-inline" style="margin-bottom:20px">
       <div class="form-group mb-2">
         <label for="username" class="sr-only">Kullanıcı Adı</label>
-        <input type="text" readonly class="form-control" id="username" value="Kullanıcı Adı"
+        <input type="text" readonly class="form-control" id="username" value="ReadOnly Alan"
           style="border: 1px solid gray; border-radius: 30px">
       </div>
       <div class="form-group mx-sm-5 mb-2">
         <label for="date" class="sr-only">Tarih Bilgileri</label>
-        <input type="date" readonly class="form-control" id="date" placeholder="Tarih Bilgileri">
+        <input type="text" readonly class="form-control" id="date" placeholder="Tarih Bilgileri" style="border: 1px solid gray; border-radius: 30px">
       </div>
     </form>
 
     <div class="jumbotron">
+      <img src="logo.png" alt="logo">
       <h1 class="display-4">Kezban Büşra Öcal</h1>
       <p class="lead">Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek</p>
+      <img src="thy.jpg" alt="thy" style="max-width: 750px; max-height: 600px;">
     </div>
 
     <form class="form-inline">
@@ -83,6 +104,9 @@
       <p class="lead">Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek Tweet içeriği buraya gelecek</p>
     </div>
     <div class="jumbotron">
+      
+      </div>
+    <div class="jumbotron">
       <h1 class="display-4">Jumbotron3</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
         featured content or information.</p>
@@ -90,6 +114,7 @@
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
+    
   </div>
 
   <!-- Bootstrap core JavaScript -->
