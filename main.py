@@ -7,9 +7,9 @@ Created on Thu May  9 10:32:05 2019
 """
 
 import tweet_catch as tC
-from flask import Flask, request
+from flask import Flask
 from flask_restful import Resource, Api
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 
 app = Flask('sentimentApp')
@@ -27,6 +27,7 @@ class Tweets(Resource):
             ###Start of the creation of AnalysisAPI
             tweetDict = {}
             sentiment = tweet_analyze.sentiment_analyzer(tweet.text)
+            subjectivity = tweet_analyze.subject_val(tweet.text)
             tweetDict['userName'] = tweet.user.name
             tweetDict['screenName'] = tweet.user.screen_name
             tweetDict['userId'] = tweet.user.id
@@ -39,6 +40,7 @@ class Tweets(Resource):
             tweetDict['likes'] = tweet.favorite_count
             tweetDict['retweets'] = tweet.retweet_count
             tweetDict['sentiment'] = sentiment
+            tweetDict['subject'] = subjectivity
             allData.append(tweetDict)
         return allData
 

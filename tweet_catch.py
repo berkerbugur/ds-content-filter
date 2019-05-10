@@ -93,6 +93,10 @@ class TweetAnalyze():
             return 0
         else:
             return -1
+        
+    def subject_val(self, tweet):
+        subjective = tb(self.clean_tweet(tweet))
+        return subjective.sentiment.subjectivity
 
 ### DRIVER METHOD TO EXECUTE ON ACTIVE PATH ###
 ### ANLIK DOSYA İÇİNDE ÇALIŞAN MAIN METODU ###
