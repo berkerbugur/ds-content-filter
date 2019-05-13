@@ -38,7 +38,6 @@ class TwitterClient():
     def __init__(self, user_name=None):
         self.auth = AuthenticateApp().authenticate_app()
         self.twitter_client = API(self.auth)
-        
         self.user_name = user_name
         
     def get_twitter_client_api(self):

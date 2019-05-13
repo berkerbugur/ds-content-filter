@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-tweet   *ngFor="let tweet of tweets, let i = index"
+                       [tweet]="tweet"
+                       [index]="i"></app-tweet>
+  </div>
+</div>

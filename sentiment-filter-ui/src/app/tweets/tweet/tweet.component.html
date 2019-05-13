@@ -1,0 +1,20 @@
+<a
+  class="list-group-item d-flex clearfix text-decoration-none text-white"
+  style="margin: 5px; cursor: pointer; padding: 15px; border-radius: 15px; background: #1B3448" [href]="tweet.tweetLink">
+
+  <span class="float-left">
+        <img
+          [src]="tweet.profilePic"
+          alt="{{ tweet.screenName }}"
+          class="img-responsive"
+          style="max-height: 35px; margin-right: 10px; border: 1px solid lightgray; border-radius: 50%">
+      </span>
+
+  <div class="float-right">
+    <h3 class="list-group-item-heading">{{ tweet.userName }}
+      <span class="text-decoration-none text-muted font-italic screen-name">@{{tweet.screenName}}</span>
+    </h3>
+    <p class="list-group-item-text">{{ tweet.tweetText }}</p>
+
+  </div>
+</a>
