@@ -36,7 +36,7 @@ class Tweets(Resource):
             tweetDict['userId'] = tweet.user.id
             tweetDict['profilePic'] = tweet.user.profile_image_url_https
             tweetDict['profileColor'] = tweet.user.profile_link_color
-            tweetDict['location'] = tweet.user.location       
+            tweetDict['location'] = tweet.user.location
             tweetDict['followers'] = tweet.user.followers_count
             tweetDict['tweetId'] = tweet.id
             tweetDict['tweetLink'] = 'https://twitter.com/statuses/' + str(tweet.id)

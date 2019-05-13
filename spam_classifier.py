@@ -102,10 +102,10 @@ class SpamClassify():
         tweet.append(tweetText)
         input_transformed = vectorizer.transform(tweet)
         prediction = mnb.predict(input_transformed)
-        return str(prediction[0])
+        return prediction[0].item()
     
 if __name__ == '__main__':
-    tweet = 'FUCK DIS SHIET'
+    tweet = 'FUG DIS SHIET'
     spammer = SpamClassify()
     predict = spammer.spam_or_ham(tweet)
     print(predict)

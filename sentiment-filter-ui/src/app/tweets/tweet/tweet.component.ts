@@ -10,9 +10,10 @@ export class TweetComponent implements OnInit {
   @Input() index: number;
   @Input() tweet: JSON;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TweetsComponent implements OnInit {
   tweets: any;
+  spamControl: boolean;
+  sentimentControl: boolean;
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +30,7 @@ export class TweetsComponent implements OnInit {
         "tweetText": "12 Tips for Writing Clean and Scalable JavaScript: https://t.co/6CzMAeUjcG",
         "likes": 191,
         "retweets": 59,
-        "spam": "1",
+        "spam": 1,
         "sentiment": 1,
         "subject": 0.7000000000000001
       },
@@ -45,7 +47,7 @@ export class TweetsComponent implements OnInit {
         "tweetText": "Have you challenged how you think about your databases? Learn about the benefits of going cloud-native in our eBook\u2026 https://t.co/3bm1uLSFM8",
         "likes": 21,
         "retweets": 5,
-        "spam": "0",
+        "spam": 0,
         "sentiment": 0,
         "subject": 0.0
       }
