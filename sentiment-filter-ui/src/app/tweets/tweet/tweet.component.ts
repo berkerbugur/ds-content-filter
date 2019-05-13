@@ -7,9 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TweetComponent implements OnInit {
 
+  @Input() sentiment: boolean;
+  @Input() spam: boolean;
+  @Input() subject: boolean;
   @Input() index: number;
   @Input() tweet: JSON;
-
 
   constructor() {
   }

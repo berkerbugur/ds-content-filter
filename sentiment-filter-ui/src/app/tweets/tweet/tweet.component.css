@@ -11,3 +11,35 @@ a:hover{
 .back-light {
   background-color: #28A745;
 }
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out-left {
+  from{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in-right ease 0.6s forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fade-out-left ease 0.6s backwards;
+}

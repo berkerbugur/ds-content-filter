@@ -18,19 +18,21 @@ CORS(app)
 api = Api(app)
 
 class Tweets(Resource):
+    def __init__(self):
+        self.twitter_client = tC.TwitterClient()
+        self.tweet_analyze = tC.TweetAnalyze()
+        self.spam_analyze = sC.SpamClassify()
+        
     def get(self):
-        twitter_client = tC.TwitterClient()
-        tweet_analyze = tC.TweetAnalyze()
-        spam_analyze = sC.SpamClassify()
         ### HOLY MOTHER OF DATA LIMIT ###
-        tweets = twitter_client.get_live_feed(2)
+        tweets = self.twitter_client.get_live_feed(20)
         allData = []
         for tweet in tweets:
             ###Start of the creation of AnalysisAPI
             tweetDict = {}
-            sentiment = tweet_analyze.sentiment_analyzer(tweet.text)
-            subjectivity = tweet_analyze.subject_val(tweet.text)
-            spammicity = spam_analyze.spam_or_ham(tweet.text)
+            sentiment = self.tweet_analyze.sentiment_analyzer(tweet.text)
+            subjectivity = self.tweet_analyze.subject_val(tweet.text)
+            spammicity = self.spam_analyze.spam_or_ham(tweet.text)
             tweetDict['userName'] = tweet.user.name
             tweetDict['screenName'] = tweet.user.screen_name
             tweetDict['userId'] = tweet.user.id

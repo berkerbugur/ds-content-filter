@@ -10,12 +10,18 @@ export class TweetsComponent implements OnInit {
   tweets: any;
   spamControl: boolean;
   sentimentControl: boolean;
+  subjectControl: boolean;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    //this.getTweets();
 
+    this.spamControl = false;
+    this.sentimentControl = false;
+    this.subjectControl = false;
+
+    this.getTweets();
+    /*
     this.tweets = [
       {
         "userName": "JavaScript Daily",
@@ -52,12 +58,35 @@ export class TweetsComponent implements OnInit {
         "subject": 0.0
       }
     ];
+     */
   }
 
-  getTweets() {
+
+  getTweets(){
     this.http.get('http://127.0.0.1:5002/tweets').subscribe( data => {
       this.tweets = data as JSON;
     });
   }
 
+  controlSentiment() {
+    if(this.sentimentControl === false) {
+      this.sentimentControl = true;
+    } else if(this.sentimentControl === true) {
+      this.sentimentControl = false;
+    }
+  }
+  controlSpam() {
+    if(this.spamControl === false) {
+      this.spamControl = true;
+    } else if(this.spamControl === true) {
+      this.spamControl = false;
+    }
+  }
+  controlSubject(){
+    if(this.subjectControl === false) {
+      this.subjectControl = true;
+    } else if(this.subjectControl === true) {
+      this.subjectControl = false;
+    }
+  }
 }
