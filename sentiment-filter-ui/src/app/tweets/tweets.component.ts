@@ -20,8 +20,8 @@ export class TweetsComponent implements OnInit {
     this.sentimentControl = false;
     this.subjectControl = false;
 
-    this.getTweets();
-    /*
+    //this.getTweets();
+
     this.tweets = [
       {
         "userName": "JavaScript Daily",
@@ -58,7 +58,7 @@ export class TweetsComponent implements OnInit {
         "subject": 0.0
       }
     ];
-     */
+
   }
 
 
@@ -69,24 +69,12 @@ export class TweetsComponent implements OnInit {
   }
 
   controlSentiment() {
-    if(this.sentimentControl === false) {
-      this.sentimentControl = true;
-    } else if(this.sentimentControl === true) {
-      this.sentimentControl = false;
-    }
+    this.sentimentControl = !this.sentimentControl;
   }
   controlSpam() {
-    if(this.spamControl === false) {
-      this.spamControl = true;
-    } else if(this.spamControl === true) {
-      this.spamControl = false;
-    }
+    this.spamControl = !this.spamControl;
   }
   controlSubject(){
-    if(this.subjectControl === false) {
-      this.subjectControl = true;
-    } else if(this.subjectControl === true) {
-      this.subjectControl = false;
-    }
+    this.subjectControl = !this.subjectControl;
   }
 }
