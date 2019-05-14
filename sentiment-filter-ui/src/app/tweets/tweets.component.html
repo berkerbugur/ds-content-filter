@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-tweet *ngFor="let tweet of tweets, let i = index"
+                       [tweet]="tweet"
+                       [index]="i" [sentiment]="sentimentControl" [spam]="spamControl" [subject]="subjectControl"></app-tweet>
+  </div>
+</div>
+
+<div class="col-md-6 fixed-bottom mx-auto bg-primary control-panel">
+  <div class="col-md-6 float-left mt-2">
+    <span class="w-100">Filter Content By</span>
+    <hr class="mt-0 mb-2" style="color: cadetblue; width: 100%;">
+    <div class="mb-10">
+      <button class="btn button-border px-1 mr-2" [ngClass]="sentimentControl ? 'btn-info' : 'btn-outline-light'" (click)="controlSentiment()"> SENTIMENT </button>
+      <button class="btn button-border px-1 mr-2" [ngClass]="spamControl ? 'btn-danger' : 'btn-outline-light'" (click)="controlSpam()"> SPAM </button>
+      <button class="btn button-border px-1 mr-2" [ngClass]="subjectControl ? 'btn-warning' : 'btn-outline-light'" (click)="controlSubject()"> SUBJECTIVITY </button>
+    </div>
+  </div>
+  <div class="col-md-6 float-right mt-2">
+    <a (click)="getTweets()">
+      <img class="icon-height my-auto float-right mt-15" src="\assets\refresh.png">
+    </a>
+  </div>
+</div>
+

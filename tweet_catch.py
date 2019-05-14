@@ -5,7 +5,7 @@ Created on Thu Mar 28 13:38:19 2019
 @author: bugur
 """
 
-import sentiment_credentials as sentCred
+import sentiment_credential as sentCred
 from tweepy import API
 from tweepy import Cursor
 from tweepy import OAuthHandler
@@ -38,7 +38,6 @@ class TwitterClient():
     def __init__(self, user_name=None):
         self.auth = AuthenticateApp().authenticate_app()
         self.twitter_client = API(self.auth)
-        
         self.user_name = user_name
         
     def get_twitter_client_api(self):
@@ -93,6 +92,10 @@ class TweetAnalyze():
             return 0
         else:
             return -1
+        
+    def subject_val(self, tweet):
+        subjective = tb(self.clean_tweet(tweet))
+        return subjective.sentiment.subjectivity
 
 ### DRIVER METHOD TO EXECUTE ON ACTIVE PATH ###
 ### ANLIK DOSYA İÇİNDE ÇALIŞAN MAIN METODU ###

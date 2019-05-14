@@ -1,0 +1,28 @@
+<a
+  *ngIf="((!sentiment || tweet.sentiment >= 0) && (!spam || !tweet.spam) && (!subject || tweet.subject < 0.5))"
+  class="list-group-item d-flex clearfix text-decoration-none text-white w-100 fade-in"
+  style="margin: 5px; cursor: pointer; padding: 15px; border-radius: 15px; background: #1B3448"
+  [href]="tweet.tweetLink"
+  target="_blank">
+  <span class="float-left">
+        <img
+          [src]="tweet.profilePic"
+          alt="{{ tweet.screenName }}"
+          class="img-responsive"
+          style="max-height: 35px; margin-right: 10px; border: 2px solid lightgray; border-radius: 50%"
+          [ngStyle]="{'border-color': tweet.profileColor}">
+      </span>
+
+  <div class="float-right w-100">
+    <h3 class="list-group-item-heading">{{ tweet.userName }}
+      <span class="text-decoration-none text-muted font-italic screen-name">@{{tweet.screenName}}</span>
+    </h3>
+    <p class="list-group-item-text px-2">{{ tweet.tweetText }}</p>
+    <hr style="width: 100%; color: lightgray">
+    <span style="margin-right: 5px"> <img src="\assets\liek.png" style="max-height: 20px"> {{tweet.likes}} </span>
+    <span style="margin-right: 10px"> <img src="\assets\retweet.png" style="max-height: 20px"> {{tweet.retweets}} </span>
+    <span class="px-2" style="border-radius: 10px; padding: 3px; margin-right: 10px" [ngClass]="tweet.sentiment >= 0 ? 'back-light': 'back-danger'"> SENTIMENT: {{tweet.sentiment >= 0 ? 'POSITIVE' : 'NEGATIVE'}} </span>
+    <span class="px-2" style="border-radius: 10px; padding: 3px; margin-right: 10px" [ngClass]="tweet.spam ? 'back-danger' : 'back-light'"> {{tweet.spam ? 'SPAM' : 'HAM'}} </span>
+    <span class="px-2" style="border-radius: 10px; padding: 3px" [ngClass]="tweet.spam ? 'back-danger' : 'back-light'"> {{tweet.subject > 0.5 ? 'SUBJECTIVE' : 'OBJECTIVE'}} </span>
+  </div>
+</a>
