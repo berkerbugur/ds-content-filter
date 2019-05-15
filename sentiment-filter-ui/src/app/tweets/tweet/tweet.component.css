@@ -11,6 +11,9 @@ a:hover{
 .back-light {
   background-color: #28A745;
 }
+.back-opaque {
+  border: 1px solid lightgray;
+}
 
 @keyframes fade-in-right {
   from {

@@ -22,7 +22,7 @@
     <hr style="width: 100%; color: lightgray">
     <span style="margin-right: 5px"> <img src="\assets\liek.png" style="max-height: 20px"> {{tweet.likes}} </span>
     <span style="margin-right: 10px"> <img src="\assets\retweet.png" style="max-height: 20px"> {{tweet.retweets}} </span>
-    <span class="px-2" style="border-radius: 10px; padding: 3px; margin-right: 10px" [ngClass]="tweet.sentiment >= 0 ? 'back-light': 'back-danger'"> SENTIMENT: {{tweet.sentiment >= 0 ? 'POSITIVE' : 'NEGATIVE'}} </span>
+    <span class="px-2" style=" border-radius: 10px; padding: 3px; margin-right: 10px" [ngClass]="{'back-light': sentimentVal==='POSITIVE', 'back-danger': sentimentVal==='NEGATIVE', 'back-opaque': sentimentVal==='NEUTRAL'}"> {{sentimentVal}} </span>
     <span class="px-2" style="border-radius: 10px; padding: 3px; margin-right: 10px" [ngClass]="tweet.spam ? 'back-danger' : 'back-light'"> {{tweet.spam ? 'SPAM' : 'HAM'}} </span>
     <span class="px-2" style="border-radius: 10px; padding: 3px" [ngClass]="tweet.spam ? 'back-danger' : 'back-light'"> {{tweet.subject > 0.5 ? 'SUBJECTIVE' : 'OBJECTIVE'}} </span>
   </div>
