@@ -105,7 +105,7 @@ class SpamClassify():
         return prediction[0].item()
     
 if __name__ == '__main__':
-    tweet = 'FUG DIS SHIET'
+    tweet = 'HELLO THERE'
     spammer = SpamClassify()
     predict = spammer.spam_or_ham(tweet)
     print(predict)
