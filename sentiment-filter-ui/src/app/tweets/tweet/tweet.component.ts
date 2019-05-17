@@ -20,11 +20,9 @@ export class TweetComponent implements OnInit {
   ngOnInit() {
     // @ts-ignore
     if (this.tweet.sentiment < 0) { this.sentimentVal = 'NEGATIVE'; }
-    else { // @ts-ignore
-      if (this.tweet.sentiment === 0) { this.sentimentVal = 'NEUTRAL'; }
-          else { // @ts-ignore
-            if (this.tweet.sentiment > 0) { this.sentimentVal = 'POSITIVE'; }
-          }
+    // @ts-ignore
+    if (this.tweet.sentiment === 0) { this.sentimentVal = 'NEUTRAL'; }
+    // @ts-ignore
+    if (this.tweet.sentiment > 0) { this.sentimentVal = 'POSITIVE'; }
     }
-  }
 }

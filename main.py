@@ -35,7 +35,7 @@ class Tweets(Resource):
             spammicity = self.spam_analyze.spam_or_ham(tweet.text)
             tweetDict['userName'] = tweet.user.name
             tweetDict['screenName'] = tweet.user.screen_name
-            tweetDict['userId'] = tweet.user.id
+            tweetDict['userProfileLink'] = 'https://twitter.com/' + tweet.user.name
             tweetDict['profilePic'] = tweet.user.profile_image_url_https
             tweetDict['profileColor'] = tweet.user.profile_link_color
             tweetDict['location'] = tweet.user.location
