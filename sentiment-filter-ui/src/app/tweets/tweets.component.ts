@@ -20,8 +20,8 @@ export class TweetsComponent implements OnInit {
     this.sentimentControl = false;
     this.subjectControl = false;
 
-    //this.getTweets();
-
+    this.getTweets();
+    /*
     this.tweets = [
       {
         "userName": "JavaScript Daily",
@@ -75,7 +75,7 @@ export class TweetsComponent implements OnInit {
         "subject": 0.0
       }
     ];
-
+    */
   }
 
 

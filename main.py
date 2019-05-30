@@ -25,7 +25,7 @@ class Tweets(Resource):
         
     def get(self):
         ### HOLY MOTHER OF DATA LIMIT ###
-        tweets = self.twitter_client.get_live_feed(20)
+        tweets = self.twitter_client.get_live_feed(30)
         allData = []
         for tweet in tweets:
             ###Start of the creation of AnalysisAPI
