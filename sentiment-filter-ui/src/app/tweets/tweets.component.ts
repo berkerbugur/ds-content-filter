@@ -20,8 +20,8 @@ export class TweetsComponent implements OnInit {
     this.sentimentControl = false;
     this.subjectControl = false;
 
-    //this.getTweets();
-
+    this.getTweets();
+    /*
     this.tweets = [
       {
         "userName": "JavaScript Daily",
@@ -56,9 +56,26 @@ export class TweetsComponent implements OnInit {
         "spam": 0,
         "sentiment": 0,
         "subject": 0.0
+      },
+      {
+        "userName": "Amazon Web Services",
+        "screenName": "awscloud",
+        "userId": 66780587,
+        "profilePic": "https://pbs.twimg.com/profile_images/907652118688829440/FrshWMKt_normal.jpg",
+        "profileColor": "FF9900",
+        "location": "Seattle, WA",
+        "followers": 1734143,
+        "tweetId": 1127710297672814593,
+        "tweetLink": "https://twitter.com/statuses/1127710297672814593",
+        "tweetText": "Have you challenged how you think about your databases? Learn about the benefits of going cloud-native in our eBook\u2026 https://t.co/3bm1uLSFM8",
+        "likes": 21,
+        "retweets": 5,
+        "spam": 0,
+        "sentiment": -1,
+        "subject": 0.0
       }
     ];
-
+    */
   }
 
 

@@ -12,10 +12,17 @@ export class TweetComponent implements OnInit {
   @Input() subject: boolean;
   @Input() index: number;
   @Input() tweet: JSON;
+  sentimentVal: string;
 
   constructor() {
   }
 
   ngOnInit() {
-  }
+    // @ts-ignore
+    if (this.tweet.sentiment < 0) { this.sentimentVal = 'NEGATIVE'; }
+    // @ts-ignore
+    if (this.tweet.sentiment === 0) { this.sentimentVal = 'NEUTRAL'; }
+    // @ts-ignore
+    if (this.tweet.sentiment > 0) { this.sentimentVal = 'POSITIVE'; }
+    }
 }

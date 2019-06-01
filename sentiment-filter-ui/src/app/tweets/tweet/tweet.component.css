@@ -1,15 +1,23 @@
 a:hover{
   background: #15202B;
 }
-.screen-name {
+.fs-small {
   font-size: small;
 }
+
+.fs-medium {
+  font-size: medium;
+}
+
 .back-danger {
   background-color: #DC3545;
 }
 
 .back-light {
   background-color: #28A745;
+}
+.back-opaque {
+  border: 1px solid lightgray;
 }
 
 @keyframes fade-in-right {
