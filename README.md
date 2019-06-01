@@ -35,11 +35,8 @@ pip install flask flask_restful flask_cors tweepy sklearn textblob pandas numpy
 - And for your Angular CLI app, through your IDE terminal, simply run ```ng serve --hmr``` and navigate to **localhost:4200** on your browser.
 - Enjoy getting rid of negative, spam or subjective content contaminating your Twitter feed!
 
-## Possible TODOs
+## Possible Extensions
 
-1. Front Development, Analytics page/feed construction page :heavy_check_mark:
-2. Adding scripts for Sentiment Analysis/Spam Filter :heavy_check_mark:
-3. [OPTIONAL] Servlet for live-data catching and event-triggers :heavy_check_mark:
-4. [OPTIONAL] NSFW Image Catcher(3rd Party) :x:
+* NSFW Image Catcher(3rd Party)
 
 
