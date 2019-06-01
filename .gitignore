@@ -6,3 +6,5 @@ __pycache__/
 model\.pkl
 
 sentiment_credential\.py
+
+SpamAndHam\.csv
