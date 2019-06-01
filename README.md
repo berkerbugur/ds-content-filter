@@ -18,23 +18,20 @@ Content Filter Using Sentiment Analysis and ML Techniques. This project is the c
 
 ***Because this project still relies on [Twitter Spam Detector](https://github.com/berkerbugur/twitter-spam-detector); you will need to provide a dataset in order to train the model. I cannot share my dataset(which I mined) publicly because of [Twitter ToS](https://developer.twitter.com/en/developer-terms/agreement). If you cannot find and require fitting data, please feel free to contact me, I can share the dataset if you don't mind how small it is.***
 
-First of all, you need to install Python and packages to script desired model creation and server-side capabilites, Angular CLI(v7) for view and projection/filtering of final data delivered by the custom API.
+* First of all, you need to install Python and packages to script desired model creation and server-side capabilites, Angular CLI(v7) for view and projection/filtering of final data delivered by the custom API.
 
-For Python dependencies simply running the following script through your console environment in your Python VE should cover all of it;
+* For Python dependencies simply running the following script through your console environment in your Python VE should cover all of it;
 ```
 pip install flask flask_restful flask_cors tweepy sklearn textblob pandas numpy
 ```
 
-After you've opened the Angular CLI app in your IDE, you can just run ```npm install``` for needed node modules.
+* After you've opened the Angular CLI app in your IDE, you can just run ```npm install``` for needed node modules.
 
 ### To Run The Project
 
 - Provide your app credentials acquired through [Twitter Developer page](https://developer.twitter.com/en.html) inside twitter_credentials.py with respected values.
 - Provide .csv formatted dataset in spam_classifier.py where expected
-- Then simply run the ***main.py*** script through your IDE or if you're using a console environment just run
-```
-python -tt main.py
-```
+- Then simply run the ***main.py*** script through your IDE or if you're using a console environment just run ```python -tt main.py```
 - And for your Angular CLI app, through your IDE terminal, simply run ```ng serve --hmr``` and navigate to **localhost:4200** on your browser.
 - Enjoy getting rid of negative, spam or subjective content contaminating your Twitter feed!
 
