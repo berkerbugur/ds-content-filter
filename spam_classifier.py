@@ -57,9 +57,10 @@ class SpamClassify():
         input_transformed = vectorizer.transform(tweet)
         prediction = mnb.predict(input_transformed)
         return prediction[0].item()
+
     
-if __name__ == '__main__':
-    tweet = 'HELLO THERE GENERAL KENOBI YOU ARE A BOLD ONE'
+if __name__ == '__main__': #Main method used for testing
+    tweet = 'Simple text for test purposes of the model'
     spammer = SpamClassify()
     predict = spammer.spam_or_ham(tweet)
     print(predict)
