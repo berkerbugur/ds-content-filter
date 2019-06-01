@@ -29,7 +29,7 @@ pip install flask flask_restful flask_cors tweepy sklearn textblob pandas numpy
 
 ### To Run The Project
 
-- Provide your app credentials acquired through [Twitter Developer page](https://developer.twitter.com/en.html) inside twitter_credentials.py with respected values.
+- Provide your app credentials acquired through [Twitter Developer page](https://developer.twitter.com/en.html) where needed with respected values.
 - Provide .csv formatted dataset in spam_classifier.py where expected
 - Then simply run the ***main.py*** script through your IDE or if you're using a console environment just run ```python -tt main.py```
 - And for your Angular CLI app, through your IDE terminal, simply run ```ng serve --hmr``` and navigate to **localhost:4200** on your browser.
